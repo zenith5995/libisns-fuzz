@@ -33,6 +33,7 @@ COPY fuzz_simple_decode.c /src/fuzz_simple_decode.c
 #   #include "libisns/message.h" to resolve correctly.
 RUN afl-clang-fast $CFLAGS \
     -I/open-isns/include \
+    -I/open-isns/include/libisns \
     fuzz_simple_decode.c \
     /open-isns/builddir/libisns.a \
     /usr/local/lib/afl/libAFLDriver.a \
